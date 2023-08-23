@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="div">
+    <div class="container">
+    <div class="clock">
+     <span id="hrs">00</span>
+     <span >:</span>
+     <span id="min">00</span>
+     <span>:</span>
+     <span id="sec">00</span>
+    </div>
+  </div>
+  </div>
+<script>
+
+let hrs = document.getElementById('hrs');
+//getting the element from DOM by its ID and assigning it to a variable called 'hrs'
+let min =document.getElementById("min");  //same as above but for minutes
+let sec= document.getElementById("sec");
+
+setInterval(()=>{
+
+
+let currentTime= new Date(); //date function 
+
+
+hrs.innerHTML =(currentTime.getHours()<10?"0":"") + currentTime.getHours();//displays the hours in th clock, the first condition make 1 = 01 2= 02 and so on
+min.innerHTML = (currentTime.getMinutes()<10?"0":"" )+ currentTime.getMinutes();   ///displaying the minute on the screen
+sec.innerHTML=(currentTime.getSeconds()<10?"0":"" )+currentTime.getSeconds();
+
+////displaying seconds on the screen
+},1000)
+
+//for updating the time we use set interval
+
+
+
+
+
+</script>
+
+  
+</body>
+</html>
